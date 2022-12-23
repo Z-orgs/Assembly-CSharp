@@ -1,0 +1,9 @@
+C:\Users\h4nh_\GitHub\Assembly-CSharp\bin\Release\net35\Assembly-CSharp.dll
+C:\Users\h4nh_\GitHub\Assembly-CSharp\bin\Release\net35\Assembly-CSharp.pdb
+C:\Users\h4nh_\GitHub\Assembly-CSharp\bin\Release\net35\UnityEngine.dll
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.csproj.CopyComplete
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.dll
+C:\Users\h4nh_\GitHub\Assembly-CSharp\obj\Release\net35\Assembly-CSharp.pdb

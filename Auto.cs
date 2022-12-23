@@ -571,38 +571,44 @@ public abstract class Auto
 
 	public void PickItemNv()
 	{
-		for (int i = 0; i < GameScr.vItemMap.size(); i++)
+		if (Code.isOnNV)
 		{
-			ItemMap itemMap = (ItemMap)GameScr.vItemMap.elementAt(i);
-			if (itemMap != null && itemMap.template.isVatPhamNhiemVu())
-			{
-				if (Math.abs(itemMap.x - Char.getMyChar().cx) > 22 || Math.abs(itemMap.y - Char.getMyChar().cy) > 22)
-				{
-					Char.Move(itemMap.x, itemMap.y);
-				}
-				Service.gI().pickItem(itemMap.itemMapID);
-				Code.Sleep(1000);
-				break;
-			}
-		}
+            for (int i = 0; i < GameScr.vItemMap.size(); i++)
+            {
+                ItemMap itemMap = (ItemMap)GameScr.vItemMap.elementAt(i);
+                if (itemMap != null && itemMap.template.isVatPhamNhiemVu())
+                {
+                    if (Math.abs(itemMap.x - Char.getMyChar().cx) > 22 || Math.abs(itemMap.y - Char.getMyChar().cy) > 22)
+                    {
+                        Char.Move(itemMap.x, itemMap.y);
+                    }
+                    Service.gI().pickItem(itemMap.itemMapID);
+                    Code.Sleep(1000);
+                    break;
+                }
+            }
+        }
 	}
 
 	public void PickDa()
 	{
-		for (int i = 0; i < GameScr.vItemMap.size(); i++)
+		if (Code.isOnDa)
 		{
-			ItemMap itemMap = (ItemMap)GameScr.vItemMap.elementAt(i);
-			if (itemMap != null && itemMap.template.type == 26 && (!itemMap.isWait || itemMap.isNoMyItem()))
-			{
-				if (Math.abs(itemMap.x - Char.getMyChar().cx) > 22 || Math.abs(itemMap.y - Char.getMyChar().cy) > 22)
-				{
-					Char.Move(itemMap.x, itemMap.y);
-					Char.getMyChar().itemFocus = itemMap;
-				}
-				Service.gI().pickItem(itemMap.itemMapID);
-				ItemMap.s();
-				break;
-			}
-		}
+            for (int i = 0; i < GameScr.vItemMap.size(); i++)
+            {
+                ItemMap itemMap = (ItemMap)GameScr.vItemMap.elementAt(i);
+                if (itemMap != null && itemMap.template.type == 26 && (!itemMap.isWait || itemMap.isNoMyItem()))
+                {
+                    if (Math.abs(itemMap.x - Char.getMyChar().cx) > 22 || Math.abs(itemMap.y - Char.getMyChar().cy) > 22)
+                    {
+                        Char.Move(itemMap.x, itemMap.y);
+                        Char.getMyChar().itemFocus = itemMap;
+                    }
+                    Service.gI().pickItem(itemMap.itemMapID);
+                    ItemMap.s();
+                    break;
+                }
+            }
+        }
 	}
 }

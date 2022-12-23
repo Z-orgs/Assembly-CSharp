@@ -57,6 +57,9 @@ public class Code
 
 	public static int NextMinMaxInt => new System.Random().Next(int.MinValue, int.MaxValue);
 
+	public static bool isOnNV = false;
+	public static bool isOnDa = false;
+
 	public static void Sleep(int milisSeconds)
 	{
 		try
@@ -355,7 +358,31 @@ public class Code
 			HackGiay = num;
 			return true;
 		}
-		if (text.Equals("rs"))
+		if (text.Equals("nhatnv"))
+		{
+			Paint("Nhặt VP nhiệm vụ: " + !isOnNV);
+			if (isOnNV)
+			{
+				isOnNV = false;
+			}
+			else
+			{
+				isOnNV = true;
+			}
+		}
+        if (text.Equals("nhatda"))
+        {
+            Paint("Nhặt đá: " + !isOnDa);
+            if (isOnDa)
+            {
+                isOnDa = false;
+            }
+            else
+            {
+                isOnDa = true;
+            }
+        }
+        if (text.Equals("rs"))
 		{
 			Paint("Reset tốc chạy");
 			isHackGiay = false;
