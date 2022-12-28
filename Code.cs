@@ -361,26 +361,18 @@ public class Code
 		if (text.Equals("nhatnv"))
 		{
 			Paint("Nhặt VP nhiệm vụ: " + !isOnNV);
-			if (isOnNV)
-			{
-				isOnNV = false;
-			}
-			else
-			{
-				isOnNV = true;
-			}
+			isOnNV = !isOnNV;
 		}
         if (text.Equals("nhatda"))
         {
             Paint("Nhặt đá: " + !isOnDa);
-            if (isOnDa)
-            {
-                isOnDa = false;
-            }
-            else
-            {
-                isOnDa = true;
-            }
+			isOnDa = !isOnDa;
+        }
+        if (text.Equals("tatl"))
+        {
+            Paint("TATL: " + !Auto.Actions.isTinhAnh);
+			Auto.Actions.isThuLinh = !Auto.Actions.isThuLinh;
+			Auto.Actions.isTinhAnh = !Auto.Actions.isTinhAnh;
         }
         if (text.Equals("rs"))
 		{

@@ -3278,16 +3278,16 @@ public class GameScr : mScreen, IChatable, IActionListener
 
 	public override void updateKey()
 	{
-		if (GameCanvas.keyAsciiPress == 103)
-		{
-			Code.Paint("g");
-			Code.autoTask.Pick(Code.autoTask.Npcid, menu: false, getTask: true);
-		}
-		if (GameCanvas.keyAsciiPress == 104)
-		{
-			Code.Paint("h");
-			Code.autoTask.Pick(5, menu: true, getTask: false, 1);
-		}
+		//if (GameCanvas.keyAsciiPress == 103)
+		//{
+		//	Code.Paint("g");
+		//	Code.autoTask.Pick(Code.autoTask.Npcid, menu: false, getTask: true);
+		//}
+		//if (GameCanvas.keyAsciiPress == 104)
+		//{
+		//	Code.Paint("h");
+		//	Code.autoTask.Pick(5, menu: true, getTask: false, 1);
+		//}
 		if (InfoDlg.isLock)
 		{
 			return;
