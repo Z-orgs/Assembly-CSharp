@@ -316,7 +316,6 @@ public class SelectCharScr : mScreen, IActionListener
 
     public void perform(int idAction, object p)
     {
-        SelectServerScr.isLoad = false;
         switch (idAction)
         {
             case 1000:

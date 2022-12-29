@@ -1865,7 +1865,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 
     public void loadGameScr()
     {
-        // SelectServerScr.isLoad = false;
+        SelectServerScr.isLoad = false;
         loadSplash();
         loadCmdBar();
         Res.init();
