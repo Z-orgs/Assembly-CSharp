@@ -59,6 +59,7 @@ public class Code
 
     public static bool isOnNV = false;
     public static bool isOnDa = false;
+    public static bool isAutoLogin = false;
 
     public static void Sleep(int milisSeconds)
     {
@@ -367,6 +368,11 @@ public class Code
         {
             Paint("Nhặt đá: " + !isOnDa);
             isOnDa = !isOnDa;
+        }
+        if (text.Equals("alg"))
+        {
+            Paint("Auto login: " + !isAutoLogin);
+            isAutoLogin = !isAutoLogin;
         }
         if (text.Equals("tatl"))
         {

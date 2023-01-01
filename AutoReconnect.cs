@@ -34,11 +34,12 @@ class AutoReconnect
         while (true)
         {
             Thread.Sleep(2000);
-            if (SelectServerScr.isLoad == true)
+            if (SelectServerScr.isLoad == true && Code.isAutoLogin)
             {
-                Thread.Sleep(1000);
                 RMS.saveRMSString("acc", user);
                 RMS.saveRMSString("pass", pass);
+                GameCanvas.loginScr.tfUser.setText(user);
+                GameCanvas.loginScr.tfPass.setText(pass);
                 Thread.Sleep(1000);
                 GameCanvas.selectsvScr.perform(1003, null);
                 Thread.Sleep(2000);
