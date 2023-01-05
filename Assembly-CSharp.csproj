@@ -9,7 +9,9 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="UnityEngine" Version="1.0.0" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>..\Client\NinjaSchool_180_Data\Managed\UnityEngine.dll</HintPath>

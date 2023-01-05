@@ -13,6 +13,15 @@
         "build": {
           "build/Microsoft.NETFramework.ReferenceAssemblies.net35.targets": {}
         }
+      },
+      "UnityEngine/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/UnityEngine.dll": {}
+        },
+        "runtime": {
+          "lib/UnityEngine.dll": {}
+        }
       }
     }
   },
@@ -177,32 +186,47 @@
         "microsoft.netframework.referenceassemblies.net35.1.0.2.nupkg.sha512",
         "microsoft.netframework.referenceassemblies.net35.nuspec"
       ]
+    },
+    "UnityEngine/1.0.0": {
+      "sha512": "4e5TFELT89DzkWxYwvGWyMGU4+iaDoe1L04NtMFbTh7e3t3CRtyfxDqc37MIPPT3dcjnBUFyv4UEy8Ot2v6jNQ==",
+      "type": "package",
+      "path": "unityengine/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/UnityEngine.dll",
+        "unityengine.1.0.0.nupkg.sha512",
+        "unityengine.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v3.5": [
-      "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.2"
+      "Microsoft.NETFramework.ReferenceAssemblies >= 1.0.2",
+      "UnityEngine >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\h4nh_\\.nuget\\packages\\": {}
+    "C:\\Users\\XLMZDrm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
-      "projectPath": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
-      "packagesPath": "C:\\Users\\h4nh_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\obj\\",
+      "projectPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+      "packagesPath": "C:\\Users\\XLMZDrm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\h4nh_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\XLMZDrm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net35"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -226,6 +250,10 @@
             "target": "Package",
             "version": "[1.0.2, )",
             "autoReferenced": true
+          },
+          "UnityEngine": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"

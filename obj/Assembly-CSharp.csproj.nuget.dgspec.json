@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {}
+    "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {
+    "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
-        "packagesPath": "C:\\Users\\h4nh_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\h4nh_\\GitHub\\Assembly-CSharp\\obj\\",
+        "projectPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\XLMZDrm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\h4nh_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\XLMZDrm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net35"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +45,10 @@
               "target": "Package",
               "version": "[1.0.2, )",
               "autoReferenced": true
+            },
+            "UnityEngine": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
