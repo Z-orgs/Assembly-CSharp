@@ -2,4 +2,5 @@
 
 ### NSO version: 1.8.0
 
-`const author = { name: "DRM" }`
+`const modder = { name: "DRM" }`
+`Thanks to VanDuc`
