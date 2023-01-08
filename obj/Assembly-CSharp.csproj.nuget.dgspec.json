@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {}
+    "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {
+    "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+        "projectPath": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
         "packagesPath": "C:\\Users\\XLMZDrm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XLMZDrm\\OneDrive\\Documents\\GitHub\\Assembly-CSharp\\obj\\",
+        "outputPath": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\XLMZDrm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\XLMZDrm\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net35"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
