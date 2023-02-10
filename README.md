@@ -2,6 +2,6 @@
 
 ### NSO version: 1.8.0
 
-`const modder = { name: "REdirect" }`
+`const modder = { name: "mxz" }`
 
 `Thanks to VanDuc`
