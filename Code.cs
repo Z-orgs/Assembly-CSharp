@@ -396,7 +396,7 @@ public class Code
 
     public static void Paint(string text)
     {
-        ChatPopup.addChatPopupMultiLine("[drm] " + text, 300, Char.getMyChar());
+        ChatPopup.addChatPopupMultiLine("[710] " + text, 300, Char.getMyChar());
     }
 
     public static void GoMap(int mapID)
