@@ -286,7 +286,7 @@ public class GameMidlet
 		latitude = string.Empty;
 		longitude = string.Empty;
 		java = "Tone:localhost:14444:0:0,Bokken:localhost:14444:0:0,Shuriken:localhost:14444:0:0,Tessen:localhost:14444:1:0,Kunai:localhost:14444:0:0,Katana:localhost:14444:0:0,Global-1:52.221.222.194:14444:0:1";
-		smartPhone = " Z-orgs:sv.drmerveem.me:14444:0:0, localhost:localhost:14444:0:0, :localhost:14444:0:0,  :localhost:14444:1:0,  :localhost:14444:0:0,  :localhost:14444:0:0,Global-1:nj6.teamobi.com:14444:0:1";
+		smartPhone = " Z-orgs:34.125.193.66:14444:0:0, localhost:localhost:14444:0:0, :localhost:14444:0:0,  :localhost:14444:1:0,  :localhost:14444:0:0,  :localhost:14444:0:0,Global-1:nj6.teamobi.com:14444:0:1";
 		ipList = new string[7] { "localhost", "localhost", "localhost", "localhost", "localhost", "localhost", "localhost" };
 	}
 }
