@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6+J3W9uFkykPRjjaw25nE/U3GKzb8Up16gi+hhWaPqtEGOFe5U7D8q3TxnFKe5z15Mp2zGbk7HIJXJnN3QGjWA==",
+  "dgSpecHash": "LALekENgoXYktYD/YLl6Ik5cmRF6QsY0K7xKN+CbhcWqWUeWFrnfEid0tj3ARJihEswux4eP3SMDNi+VvEhhhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+  "projectFilePath": "/Users/710x/common/Assembly-CSharp/Assembly-CSharp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\XLMZDrm\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "C:\\Users\\XLMZDrm\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net35\\1.0.2\\microsoft.netframework.referenceassemblies.net35.1.0.2.nupkg.sha512",
-    "C:\\Users\\XLMZDrm\\.nuget\\packages\\unityengine\\1.0.0\\unityengine.1.0.0.nupkg.sha512"
+    "/Users/710x/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/Users/710x/.nuget/packages/microsoft.netframework.referenceassemblies.net35/1.0.3/microsoft.netframework.referenceassemblies.net35.1.0.3.nupkg.sha512",
+    "/Users/710x/.nuget/packages/unityengine/1.0.0/unityengine.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

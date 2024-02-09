@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {}
+    "/Users/710x/common/Assembly-CSharp/Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj": {
+    "/Users/710x/common/Assembly-CSharp/Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
+        "projectUniqueName": "/Users/710x/common/Assembly-CSharp/Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\Assembly-CSharp.csproj",
-        "packagesPath": "C:\\Users\\XLMZDrm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XLMZDrm\\GitHub\\Assembly-CSharp\\obj\\",
+        "projectPath": "/Users/710x/common/Assembly-CSharp/Assembly-CSharp.csproj",
+        "packagesPath": "/Users/710x/.nuget/packages/",
+        "outputPath": "/Users/710x/common/Assembly-CSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\XLMZDrm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/710x/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net35"
@@ -41,7 +41,7 @@
             "Microsoft.NETFramework.ReferenceAssemblies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[1.0.2, )",
+              "version": "[1.0.3, )",
               "autoReferenced": true
             },
             "UnityEngine": {
@@ -49,7 +49,7 @@
               "version": "[1.0.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/710x/.dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

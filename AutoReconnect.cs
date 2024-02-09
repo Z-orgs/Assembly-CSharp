@@ -1,53 +1,42 @@
 using System.Threading;
 
-class AutoReconnect
+internal class AutoReconnect
 {
-    string user;
-    string pass;
-    int indexChar;
-    public static AutoReconnect instance;
+    private static AutoReconnect instance;
+
+    private static Thread threadLogin;
+    private int indexChar;
+    private string pass;
+    private string user;
+
     public static AutoReconnect gI()
     {
-        if (instance == null)
-        {
-            instance = new AutoReconnect();
-        }
-        return instance;
+        return instance ??= new AutoReconnect();
     }
-    public static Thread threadLogin;
-    public void GetInfo()
+
+    public void Login()
     {
-        user = RMS.Read("Info", "user", "");
-        pass = RMS.Read("Info", "pass", "");
-        indexChar = int.Parse(RMS.Read("Info", "char", "0"));
+        if (threadLogin != null && !Code.isAutoLogin) return;
+        threadLogin = new Thread(DoLogin);
+        threadLogin.Start();
     }
-    public void login()
-    {
-        if (threadLogin == null || threadLogin.IsAlive == false)
-        {
-            threadLogin = new Thread(new ThreadStart(doLogin));
-            threadLogin.Start();
-        }
-    }
-    public void doLogin()
+
+    private void DoLogin()
     {
         while (true)
         {
             Thread.Sleep(2000);
-            if (SelectServerScr.isLoad == true && Code.isAutoLogin)
-            {
-                RMS.saveRMSString("acc", user);
-                RMS.saveRMSString("pass", pass);
-                GameCanvas.loginScr.tfUser.setText(user);
-                GameCanvas.loginScr.tfPass.setText(pass);
-                Thread.Sleep(1000);
-                GameCanvas.selectsvScr.perform(1003, null);
-                Thread.Sleep(2000);
-                SelectCharScr.gI().indexSelect = indexChar;
-                SelectCharScr.gI().perform(1000, null);
-                GameCanvas.gameTick = 0;
-                Thread.Sleep(2000);
-            }
+            if (!SelectServerScr.isLoad || !Code.isAutoLogin && Session_ME.gI().isConnected()) continue;
+            var account = Storage.gI().getAccount();
+            GameCanvas.loginScr.tfUser.setText(account.user);
+            GameCanvas.loginScr.tfPass.setText(account.pass);
+            Thread.Sleep(1000);
+            GameCanvas.selectsvScr.perform(1003, null);
+            Thread.Sleep(2000);
+            SelectCharScr.gI().indexSelect = account.indexChar;
+            SelectCharScr.gI().perform(1000, null);
+            GameCanvas.gameTick = 0;
+            Thread.Sleep(2000);
         }
     }
 }

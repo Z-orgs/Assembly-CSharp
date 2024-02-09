@@ -33,17 +33,24 @@ public class Main : MonoBehaviour
 
     public static int level;
 
-    public bool isWorldver;
-
-    private int updateCount;
-
-    private int paintCount;
-
-    private Vector2 lastMousePos = default(Vector2);
-
     public static int a;
 
     public static bool isCompactDevice;
+
+    public bool isWorldver;
+
+    private Vector2 lastMousePos;
+
+    private int paintCount;
+
+    private int updateCount;
+
+    static Main()
+    {
+        res = "res";
+        a = 1;
+        isCompactDevice = true;
+    }
 
     private void Start()
     {
@@ -51,33 +58,20 @@ public class Main : MonoBehaviour
         {
             level = RMS.loadRMSInt("levelScreenKN");
             if (level == 1)
-            {
-                Screen.SetResolution(1024, 600, fullscreen: false);
-            }
+                Screen.SetResolution(1024, 600, false);
             else
-            {
-                Screen.SetResolution(1024, 600, fullscreen: false);
-            }
-            if (Thread.CurrentThread.Name != "Main")
-            {
-                Thread.CurrentThread.Name = "Main";
-            }
+                Screen.SetResolution(1024, 600, false);
+            if (Thread.CurrentThread.Name != "Main") Thread.CurrentThread.Name = "Main";
             mainThreadName = Thread.CurrentThread.Name;
-            AutoReconnect.gI().GetInfo();
-            AutoReconnect.gI().login();
-            if (iPhoneSettings.generation == iPhoneGeneration.iPodTouch4Gen)
-            {
-                isIpod = true;
-            }
+            Storage.gI().saveAccount(RMS.loadRMSString("acc"), RMS.loadRMSString("pass"));
+            AutoReconnect.gI().Login();
+            if (iPhoneSettings.generation == iPhoneGeneration.iPodTouch4Gen) isIpod = true;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             Application.runInBackground = true;
             Application.targetFrameRate = 30;
-            base.useGUILayout = false;
+            useGUILayout = false;
             isCompactDevice = detectCompactDevice();
-            if (main == null)
-            {
-                main = this;
-            }
+            if (main == null) main = this;
             started = true;
             ScaleGUI.initScaleGUI();
             IMEI = SystemInfo.deviceUniqueIdentifier;
@@ -85,10 +79,7 @@ public class Main : MonoBehaviour
             isWp = false;
             isAppTeam = false;
             IphoneVersionApp = false;
-            if (isPC)
-            {
-                Screen.fullScreen = false;
-            }
+            if (isPC) Screen.fullScreen = false;
             g = new mGraphics();
             midlet = new GameMidlet();
             GameMidlet.isWorldver = isWorldver;
@@ -99,25 +90,11 @@ public class Main : MonoBehaviour
         }
     }
 
-    public void doClearRMS()
+    private void Update()
     {
-        if (isPC && RMS.loadRMSInt("lastZoomlevel") != mGraphics.zoomLevel)
+        if (!isPC)
         {
-            RMS.clearRMS();
-            RMS.saveRMSInt("lastZoomlevel", mGraphics.zoomLevel);
-            RMS.saveRMSInt("levelScreenKN", level);
-        }
-    }
-
-    private void OnGUI()
-    {
-        checkInput();
-        Session_ME.update();
-        if (Event.current.type.Equals(EventType.Repaint) && paintCount <= updateCount)
-        {
-            canvas.paint(g);
-            paintCount++;
-            g.reset();
+            var num = 1 / a;
         }
     }
 
@@ -135,52 +112,15 @@ public class Main : MonoBehaviour
         Code.Fixed();
     }
 
-    private void Update()
+    private void OnGUI()
     {
-        if (!isPC)
+        checkInput();
+        Session_ME.update();
+        if (Event.current.type.Equals(EventType.Repaint) && paintCount <= updateCount)
         {
-            int num = 1 / a;
-        }
-    }
-
-    private void checkInput()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            canvas.pointerPressed((int)(mousePosition.x / (float)mGraphics.zoomLevel), (int)(((float)Screen.height - mousePosition.y) / (float)mGraphics.zoomLevel));
-            lastMousePos.x = mousePosition.x / (float)mGraphics.zoomLevel;
-            lastMousePos.y = mousePosition.y / (float)mGraphics.zoomLevel;
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mousePosition2 = Input.mousePosition;
-            canvas.pointerDragged((int)(mousePosition2.x / (float)mGraphics.zoomLevel), (int)(((float)Screen.height - mousePosition2.y) / (float)mGraphics.zoomLevel));
-            lastMousePos.x = mousePosition2.x / (float)mGraphics.zoomLevel;
-            lastMousePos.y = mousePosition2.y / (float)mGraphics.zoomLevel;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Vector3 mousePosition3 = Input.mousePosition;
-            lastMousePos.x = mousePosition3.x / (float)mGraphics.zoomLevel;
-            lastMousePos.y = mousePosition3.y / (float)mGraphics.zoomLevel;
-            canvas.pointerReleased((int)(mousePosition3.x / (float)mGraphics.zoomLevel), (int)(((float)Screen.height - mousePosition3.y) / (float)mGraphics.zoomLevel));
-        }
-        if (Input.anyKeyDown && Event.current.type == EventType.KeyDown)
-        {
-            int num = MyKeyMap.map(Event.current.keyCode);
-            if (num != 0)
-            {
-                canvas.keyPressed(num);
-            }
-        }
-        if (Event.current.type == EventType.KeyUp)
-        {
-            int num2 = MyKeyMap.map(Event.current.keyCode);
-            if (num2 != 0)
-            {
-                canvas.keyReleased(num2);
-            }
+            canvas.paint(g);
+            paintCount++;
+            g.reset();
         }
     }
 
@@ -191,46 +131,76 @@ public class Main : MonoBehaviour
         GameCanvas.bRun = false;
         Session_ME.gI().close();
         Code.Stop();
-        if (isPC)
+        if (isPC) Application.Quit();
+    }
+
+    public void doClearRMS()
+    {
+        if (isPC && RMS.loadRMSInt("lastZoomlevel") != mGraphics.zoomLevel)
         {
-            Application.Quit();
+            RMS.clearRMS();
+            RMS.saveRMSInt("lastZoomlevel", mGraphics.zoomLevel);
+            RMS.saveRMSInt("levelScreenKN", level);
+        }
+    }
+
+    private void checkInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var mousePosition = Input.mousePosition;
+            canvas.pointerPressed((int)(mousePosition.x / mGraphics.zoomLevel), (int)((Screen.height - mousePosition.y) / mGraphics.zoomLevel));
+            lastMousePos.x = mousePosition.x / mGraphics.zoomLevel;
+            lastMousePos.y = mousePosition.y / mGraphics.zoomLevel;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            var mousePosition2 = Input.mousePosition;
+            canvas.pointerDragged((int)(mousePosition2.x / mGraphics.zoomLevel), (int)((Screen.height - mousePosition2.y) / mGraphics.zoomLevel));
+            lastMousePos.x = mousePosition2.x / mGraphics.zoomLevel;
+            lastMousePos.y = mousePosition2.y / mGraphics.zoomLevel;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            var mousePosition3 = Input.mousePosition;
+            lastMousePos.x = mousePosition3.x / mGraphics.zoomLevel;
+            lastMousePos.y = mousePosition3.y / mGraphics.zoomLevel;
+            canvas.pointerReleased((int)(mousePosition3.x / mGraphics.zoomLevel), (int)((Screen.height - mousePosition3.y) / mGraphics.zoomLevel));
+        }
+
+        if (Input.anyKeyDown && Event.current.type == EventType.KeyDown)
+        {
+            var num = MyKeyMap.map(Event.current.keyCode);
+            if (num != 0) canvas.keyPressed(num);
+        }
+
+        if (Event.current.type == EventType.KeyUp)
+        {
+            var num2 = MyKeyMap.map(Event.current.keyCode);
+            if (num2 != 0) canvas.keyReleased(num2);
         }
     }
 
     public static void exit()
     {
         if (isPC)
-        {
             main.OnApplicationQuit();
-        }
         else
-        {
             a = 0;
-        }
     }
 
     public static bool detectCompactDevice()
     {
-        if (iPhoneSettings.generation == iPhoneGeneration.iPhone || iPhoneSettings.generation == iPhoneGeneration.iPhone3G || iPhoneSettings.generation == iPhoneGeneration.iPodTouch1Gen || iPhoneSettings.generation == iPhoneGeneration.iPodTouch2Gen)
-        {
-            return false;
-        }
+        if (iPhoneSettings.generation == iPhoneGeneration.iPhone || iPhoneSettings.generation == iPhoneGeneration.iPhone3G || iPhoneSettings.generation == iPhoneGeneration.iPodTouch1Gen ||
+            iPhoneSettings.generation == iPhoneGeneration.iPodTouch2Gen) return false;
         return true;
     }
 
     public static bool checkCanSendSMS()
     {
-        if (iPhoneSettings.generation == iPhoneGeneration.iPhone3GS || iPhoneSettings.generation == iPhoneGeneration.iPhone4 || iPhoneSettings.generation > iPhoneGeneration.iPodTouch4Gen)
-        {
-            return true;
-        }
+        if (iPhoneSettings.generation == iPhoneGeneration.iPhone3GS || iPhoneSettings.generation == iPhoneGeneration.iPhone4 || iPhoneSettings.generation > iPhoneGeneration.iPodTouch4Gen) return true;
         return false;
-    }
-
-    static Main()
-    {
-        res = "res";
-        a = 1;
-        isCompactDevice = true;
     }
 }
