@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f97efec1-9f89-4af5-af3d-ee5994bf0710" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assembly-CSharp.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assembly-CSharp.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net35/Assembly-CSharp.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +98,8 @@
       <workItem from="1707473915536" duration="28000" />
       <workItem from="1707473998110" duration="39000" />
       <workItem from="1707474047235" duration="49000" />
+      <workItem from="1707474141399" duration="385000" />
+      <workItem from="1707476366695" duration="15000" />
     </task>
     <servers />
   </component>
